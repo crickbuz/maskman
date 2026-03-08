@@ -1,0 +1,219 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maskman Predictions</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(180deg,#0f051f,#04010a);
+color:white;
+text-align:center;
+padding:30px;
+}
+
+.container{
+max-width:420px;
+margin:auto;
+}
+
+.logo{
+width:110px;
+height:110px;
+border-radius:50%;
+margin:auto;
+background:#111;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:42px;
+border:3px solid #ff3c3c;
+}
+
+h1{
+margin:20px 0 5px;
+font-size:28px;
+background:linear-gradient(90deg,#ff3c3c,#ffb347);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.members{
+margin-top:10px;
+font-size:15px;
+opacity:.9;
+}
+
+.livejoin{
+margin-top:15px;
+font-size:14px;
+color:#ffd700;
+}
+
+.predictions{
+margin-top:30px;
+text-align:left;
+background:#0e0520;
+padding:20px;
+border-radius:15px;
+}
+
+.predictions h2{
+text-align:center;
+margin-bottom:15px;
+color:#ffd700;
+}
+
+.match{
+background:#160a2e;
+padding:12px;
+margin-bottom:10px;
+border-radius:10px;
+font-size:14px;
+line-height:1.6;
+}
+
+.notification{
+position:fixed;
+bottom:90px;
+left:20px;
+background:#111;
+padding:10px 14px;
+border-radius:10px;
+font-size:13px;
+box-shadow:0 0 15px rgba(0,0,0,0.6);
+opacity:0;
+transition:.4s;
+}
+
+.sticky{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+background:#000;
+padding:15px;
+}
+
+.sticky a{
+display:block;
+background:linear-gradient(90deg,#ff4e50,#f9d423);
+padding:16px;
+border-radius:30px;
+font-size:18px;
+font-weight:bold;
+text-decoration:none;
+color:black;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+🎭
+</div>
+
+<h1>MASKMAN</h1>
+
+<div class="members">
+👥 90,932 Subscribers
+</div>
+
+<div class="livejoin">
+⚡ <span id="liveJoin">18</span> users joined in last minute
+</div>
+
+<div class="predictions">
+
+<h2>🔥 Latest Match Predictions</h2>
+
+<div class="match">
+🏏 India vs New Zealand  
+<b>Toss Prediction:</b> India  
+<b>Match Prediction:</b> India Win
+</div>
+
+<div class="match">
+🏏 Australia vs England  
+<b>Toss Prediction:</b> Australia  
+<b>Match Prediction:</b> Australia Win
+</div>
+
+<div class="match">
+🏏 Pakistan vs South Africa  
+<b>Toss Prediction:</b> Pakistan  
+<b>Match Prediction:</b> Pakistan Win
+</div>
+
+<div class="match">
+🏏 Sri Lanka vs Bangladesh  
+<b>Toss Prediction:</b> Sri Lanka  
+<b>Match Prediction:</b> Sri Lanka Win
+</div>
+
+</div>
+
+</div>
+
+<div class="notification" id="notify"></div>
+
+<div class="sticky">
+<a href="https://t.me/+RTsoDgtU9nc2NmE1" onclick="joinEvent()">
+🚀 JOIN TELEGRAM CHANNEL
+</a>
+</div>
+
+<script>
+
+function joinEvent(){
+if(typeof fbq !== 'undefined'){
+fbq('track','Lead');
+}
+}
+
+const names=[
+"Rahul","Aman","Rohit","Vikas","Sahil","Arjun","Kunal","Ankit",
+"Deepak","Nitin","Manish","Vivek","Aditya","Shubham","Pankaj",
+"Akash","Sandeep","Sumit","Harsh","Yash"
+];
+
+function showJoin(){
+
+let name=names[Math.floor(Math.random()*names.length)];
+
+let box=document.getElementById("notify");
+
+box.innerHTML="✅ "+name+" just joined the channel";
+
+box.style.opacity="1";
+
+setTimeout(()=>{
+box.style.opacity="0";
+},3000);
+
+}
+
+setInterval(showJoin,5000);
+
+setInterval(function(){
+
+let rand=Math.floor(Math.random()*40)+10;
+
+document.getElementById("liveJoin").innerHTML=rand;
+
+},4000);
+
+</script>
+
+</body>
+</html>
+```
